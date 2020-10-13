@@ -34,9 +34,7 @@ class Post(models.Model):
 
 class Picture(models.Model):
     name = models.TextField()
-    image1 = models.ImageField(blank=True, upload_to='images/')
-    image2 = models.ImageField(upload_to='images/',blank=True)
-    image3 = models.ImageField(blank=True, upload_to='images/')
+    image = models.ImageField(blank=True, upload_to='images/')
 
     def __str__(self):
         return self.name
