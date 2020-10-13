@@ -1,0 +1,23 @@
+{% extends 'portnew/home.html' %}
+
+{% block content %}
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      {% for post in object_list %}
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <img src="{{ post.image.url }}" height="350px" width="350px" alt="">
+          <div class="card-body text-center align-items-center">
+            <p class="card-text text-uppercase bg-gradient-primary text-dark text-center text-decoration-none"
+              href="">{{ post.name }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

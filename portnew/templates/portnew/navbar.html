@@ -1,0 +1,21 @@
+<nav class="navbar sticky-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'project' %}">Projects</a>
+        <a class="navbar-brand" href="{% url 'home' %}">MyWebsite</a>
+        <a class="navbar-brand" href="{% url 'about' %}">About</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    
+    <div class="fixed-bottom">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4 text-muted text-right text-align-center">
+                <a class="text-white text-hover-orange hover_text" href="{% url 'about' %}">
+                    
+                    <h5 class="hover_text">{{request.user}}</h5>
+                    
+                </a>
+            </div>
+        </div>
+    </div>
