@@ -1,10 +1,55 @@
 {% extends 'portnew/home.html' %}
 
 {% block content %}
+<style>
+.slider {
+    position: relative;
+    animation-name: left_slide;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes left_slide {
+    0% {
+      left: 1200px;
+      top: 0px;
+    }
+
+    25% {
+      left: 0px;
+      top: 0px;
+    }
+  }
+.image_slider {
+    position: relative;
+    animation-name: top_slide;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    border-radius: 50%;
+  }
+
+  @keyframes top_slide {
+    0% {
+      left: 0px;
+      bottom: 600px;
+      border-radius: 0%;
+    }
+    25% {
+      left: 0px;
+      bottom: 600px;
+      border-radius: 25%;
+    }
+
+    50% {
+      left: 0px;
+      bottom: 0px;
+    }
+  }
+</style>
 {% for post in object_list %}
 <div class="container">
     <div class="row featurette py-5">
-        <div class="col-md-7">
+        <div class="col-md-7 slider">
             <h2 class="featurette-heading">Hello there this is dhiraj <span class="text-muted">Owner</span> </h2>
             <p class="lead">
                 Hey I am dhiraj and i am good at web development in these languages html css and javascript. And i have made website using these languages and bootstrap. And i am also quite good at python development and django web development. The thing i have come to this fiverr to earn two thing one is skill set how to sell something to a customer and how to fulfill the requirements of the customer and second is to earn some extra cash for my future. 
@@ -14,7 +59,7 @@
         </div>
         <div class="col-md-5">
             <rect width="100%" height="100%" fill="#eee">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="250px" height="350px" src="{{ post.image.url }}" alt="">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto image_slider" width="250px" height="350px" src="{{ post.image.url }}" alt="">
             </rect>
         </div>
     </div>
